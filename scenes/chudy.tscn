@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://clb06t7m4matc"]
+
+[ext_resource type="PackedScene" uid="uid://d1hheih2u786h" path="res://scenes/player.tscn" id="1_bwka5"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qlg0r"]
+
+[node name="chudy" unique_id=1932053902 instance=ExtResource("1_bwka5")]
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=1245868877]
+sprite_frames = SubResource("SpriteFrames_qlg0r")
+animation = &"default"

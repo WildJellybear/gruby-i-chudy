@@ -61,9 +61,9 @@ y_sort_enabled = true
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1245868877]
+position = Vector2(0, 3)
 sprite_frames = SubResource("SpriteFrames_126ht")
 animation = &"idle"
-frame_progress = 0.5387376
 offset = Vector2(0, -15)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=852284990]

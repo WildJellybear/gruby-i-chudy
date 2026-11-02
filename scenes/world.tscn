@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://ddk5yvls678c3" path="res://assets/plains.png" id="1_nnsk1"]
 [ext_resource type="Texture2D" uid="uid://butirh43xryq1" path="res://assets/objects.png" id="2_rwgxs"]
-[ext_resource type="PackedScene" uid="uid://d1hheih2u786h" path="res://scenes/player.tscn" id="3_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://dpo6lwj6y3c4n" path="res://scenes/enemies/soldier.tscn" id="4_qfnet"]
+[ext_resource type="PackedScene" uid="uid://38k1cso7ewx1" path="res://scenes/gruby.tscn" id="6_i7141"]
 [ext_resource type="PackedScene" uid="uid://mxjek6p3gmwd" path="res://scenes/enemies/boar.tscn" id="6_qfnet"]
 
 [sub_resource type="GDScript" id="GDScript_e5uuo"]
@@ -117,14 +117,6 @@ tile_set = SubResource("TileSet_126ht")
 [node name="y-sorted" type="Node2D" parent="." unique_id=199846568]
 y_sort_enabled = true
 
-[node name="player" parent="y-sorted" unique_id=1932053902 instance=ExtResource("3_4wyf3")]
-position = Vector2(29, 74)
-collision_layer = 3
-
-[node name="Camera2D" type="Camera2D" parent="y-sorted/player" unique_id=1507211015]
-zoom = Vector2(3, 3)
-position_smoothing_enabled = true
-
 [node name="obstacles" type="TileMapLayer" parent="y-sorted" unique_id=1422458068]
 y_sort_enabled = true
 use_parent_material = true
@@ -136,3 +128,11 @@ position = Vector2(241, 29)
 
 [node name="Boar" parent="y-sorted" unique_id=1670174903 instance=ExtResource("6_qfnet")]
 position = Vector2(105, 137)
+
+[node name="gruby" parent="y-sorted" unique_id=1014357948 instance=ExtResource("6_i7141")]
+position = Vector2(16, 32)
+
+[node name="Camera2D" type="Camera2D" parent="y-sorted/gruby" unique_id=1507211015]
+position = Vector2(0, -8)
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
