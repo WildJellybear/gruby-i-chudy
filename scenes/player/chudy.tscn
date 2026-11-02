@@ -1,9 +1,28 @@
-[gd_scene format=3 uid="uid://clb06t7m4matc"]
+[gd_scene format=3 uid="uid://c68h22glont1d"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_qlg0r"]
+[ext_resource type="PackedScene" uid="uid://d1hheih2u786h" path="res://scenes/player/player.tscn" id="1_s0lpq"]
+[ext_resource type="Script" uid="uid://cxjcdyu6ce7js" path="res://scripts/player/chudy.gd" id="2_12rvj"]
+[ext_resource type="Texture2D" uid="uid://b4xhbakauqscj" path="res://assets/sprites/player/player.png" id="3_17f57"]
 
-[node name="chudy" unique_id=1932053902]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnf3n"]
+atlas = ExtResource("3_17f57")
+region = Rect2(48, 288, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xrivr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnf3n")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="chudy" unique_id=1932053902 instance=ExtResource("1_s0lpq")]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("2_12rvj")
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=1245868877]
-sprite_frames = SubResource("SpriteFrames_qlg0r")
-animation = &"default"
+sprite_frames = SubResource("SpriteFrames_xrivr")

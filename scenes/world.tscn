@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://ddk5yvls678c3" path="res://assets/plains.png" id="1_nnsk1"]
 [ext_resource type="Texture2D" uid="uid://butirh43xryq1" path="res://assets/objects.png" id="2_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://dpo6lwj6y3c4n" path="res://scenes/enemies/soldier.tscn" id="4_qfnet"]
+[ext_resource type="Script" uid="uid://1cvoxyjp20sb" path="res://scenes/character_manager.gd" id="6_4mrxx"]
+[ext_resource type="PackedScene" uid="uid://c68h22glont1d" path="res://scenes/player/chudy.tscn" id="6_7r4gi"]
 [ext_resource type="PackedScene" uid="uid://38k1cso7ewx1" path="res://scenes/player/gruby.tscn" id="6_i7141"]
 [ext_resource type="PackedScene" uid="uid://mxjek6p3gmwd" path="res://scenes/enemies/boar.tscn" id="6_qfnet"]
 
@@ -138,3 +140,11 @@ collision_mask = 3
 position = Vector2(0, -8)
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
+
+[node name="chudy" parent="y-sorted" unique_id=1932053902 instance=ExtResource("6_7r4gi")]
+position = Vector2(104, 16)
+
+[node name="CharacterManager" type="Node" parent="." unique_id=1125122411 node_paths=PackedStringArray("gruby", "chudy")]
+script = ExtResource("6_4mrxx")
+gruby = NodePath("../y-sorted/gruby")
+chudy = NodePath("../y-sorted/chudy")

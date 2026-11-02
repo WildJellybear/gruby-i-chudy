@@ -3,25 +3,31 @@ class_name Player
 extends CharacterBody2D
 
 ## ============================================================
-## PLAYER - KLASA BAZOWA GRYWALNYCH POSTACI
+## PLAYER - BAZOWA KLASA GRYWALNYCH POSTACI
 ## ============================================================
-@export var speed: float = 100.0
 
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+
+# ------------------------------------------------------------
+# KONFIGURACJA
+# ------------------------------------------------------------
+@export var speed: float = 100.0
 
 
 # ------------------------------------------------------------
 # STAN POSTACI
 # ------------------------------------------------------------
 
-## Ostatni kierunek, w którym poruszała się postać.
-##
-## Dostępne wartości:
-## Vector2.UP    = ( 0, -1)
-## Vector2.DOWN  = ( 0,  1)
-## Vector2.LEFT  = (-1,  0)
-## Vector2.RIGHT = ( 1,  0)
+## Czy ta postać jest aktualnie sterowana przez gracza?
+var is_player_controlled: bool = false
+
+## Ostatni kierunek patrzenia postaci.
 var facing_direction: Vector2 = Vector2.DOWN
+
+
+# ------------------------------------------------------------
+# REFERENCJE
+# ------------------------------------------------------------
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 
 # ------------------------------------------------------------
@@ -33,22 +39,24 @@ func _ready() -> void:
 
 
 # ------------------------------------------------------------
-# AKTUALIZACJA FIZYKI
+# STEROWANIE
 # ------------------------------------------------------------
+
 func _physics_process(_delta: float) -> void:
-	player_movement()
+
+	if is_player_controlled:
+		player_movement()
+	else:
+		# Zatrzymujemy nieaktywną postać.
+		velocity = Vector2.ZERO
+		update_animation()
 
 
-# ------------------------------------------------------------
-# PORUSZANIE POSTACIĄ
-# ------------------------------------------------------------
+## Odczytuje klawisze i wykonuje ruch postaci.
 func player_movement() -> void:
 
-	# Kierunek aktualnego ruchu.
-	# ZERO oznacza brak wciśniętego kierunku.
 	var direction: Vector2 = Vector2.ZERO
 
-	# Odczyt wejścia gracza.
 	if Input.is_action_pressed("ui_right"):
 		direction = Vector2.RIGHT
 
@@ -61,11 +69,10 @@ func player_movement() -> void:
 	elif Input.is_action_pressed("ui_up"):
 		direction = Vector2.UP
 
-	# Wyliczenie prędkości ruchu.
+	# Obliczamy prędkość na podstawie kierunku.
 	velocity = direction * speed
 
-	# Zapamiętujemy ostatni kierunek wyłącznie,
-	# gdy gracz rzeczywiście wciska kierunek ruchu.
+	# Zapamiętujemy kierunek tylko podczas ruchu
 	if direction != Vector2.ZERO:
 		facing_direction = direction
 
@@ -74,24 +81,32 @@ func player_movement() -> void:
 	move_and_slide()
 
 
+## Włącza albo wyłącza sterowanie daną postacią.
+##
+## Wywoływana przez CharacterManager.
+## Przy wyłączeniu sterowania zatrzymujemy postać (na razie),
+## ale nie zmieniamy jej pozycji ani kierunku.
+func set_player_controlled(enabled: bool) -> void:
+	is_player_controlled = enabled
+
+	if not enabled:
+		velocity = Vector2.ZERO
+		update_animation()
+
+
 # ------------------------------------------------------------
-# WYBÓR ANIMACJI
+# ANIMACJE
 # ------------------------------------------------------------
 func update_animation() -> void:
 
-	# Sprawdzamy, czy postać aktualnie się porusza.
 	var is_moving: bool = velocity != Vector2.ZERO
 
-	if facing_direction == Vector2.RIGHT:
-		animated_sprite_2d.flip_h = true
+	# Oryginalna animacja boczna patrzy w lewo.
+	# Prawo uzyskujemy przez lustrzane odbicie.
+	animated_sprite_2d.flip_h = (
+		facing_direction == Vector2.RIGHT
+	)
 
-	elif facing_direction == Vector2.LEFT:
-		animated_sprite_2d.flip_h = false
-
-	else:
-		animated_sprite_2d.flip_h = false
-
-	# Postać jest w ruchu.
 	if is_moving:
 
 		if facing_direction == Vector2.DOWN:
@@ -103,8 +118,6 @@ func update_animation() -> void:
 		else:
 			play_animation("walk_side")
 
-	# Postać stoi - wybieramy idle
-	# na podstawie ostatniego kierunku.
 	else:
 
 		if facing_direction == Vector2.DOWN:
@@ -117,11 +130,7 @@ func update_animation() -> void:
 			play_animation("idle_side")
 
 
-# ------------------------------------------------------------
-# BEZPIECZNE ODTWARZANIE ANIMACJI
-# ------------------------------------------------------------
-
-## Odtwarza animację o podanej nazwie jeżeli taka istnieje i nie jest pusta
+## Bezpiecznie odtwarza animację o podanej nazwie.
 func play_animation(animation_name: StringName) -> void:
 
 	var frames: SpriteFrames = animated_sprite_2d.sprite_frames
@@ -134,7 +143,7 @@ func play_animation(animation_name: StringName) -> void:
 			animated_sprite_2d.play(animation_name)
 			return
 
-	# Animacja zastępcza dla niegotowych kierunków.
+	# Tymczasowa animacja zastępcza.
 	if frames.has_animation("idle"):
 		if frames.get_frame_count("idle") > 0:
 			animated_sprite_2d.play("idle")
