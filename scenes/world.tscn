@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://ddk5yvls678c3" path="res://assets/plains.png" id="1_nnsk1"]
 [ext_resource type="Texture2D" uid="uid://butirh43xryq1" path="res://assets/objects.png" id="2_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://dpo6lwj6y3c4n" path="res://scenes/enemies/soldier.tscn" id="4_qfnet"]
-[ext_resource type="PackedScene" uid="uid://38k1cso7ewx1" path="res://scenes/gruby.tscn" id="6_i7141"]
+[ext_resource type="PackedScene" uid="uid://38k1cso7ewx1" path="res://scenes/player/gruby.tscn" id="6_i7141"]
 [ext_resource type="PackedScene" uid="uid://mxjek6p3gmwd" path="res://scenes/enemies/boar.tscn" id="6_qfnet"]
 
 [sub_resource type="GDScript" id="GDScript_e5uuo"]
@@ -131,6 +131,8 @@ position = Vector2(105, 137)
 
 [node name="gruby" parent="y-sorted" unique_id=1014357948 instance=ExtResource("6_i7141")]
 position = Vector2(16, 32)
+collision_layer = 3
+collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="y-sorted/gruby" unique_id=1507211015]
 position = Vector2(0, -8)

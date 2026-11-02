@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkko2ane5b50n"
-path="res://.godot/imported/boar_spritesheet_20x18.png-f6445895e937f33b6c579fd60f04b989.ctex"
+uid="uid://c27vn7fuycq2v"
+path="res://.godot/imported/player_walk_down.png-09f308413ba852706bf393046b25f43e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/boar_spritesheet_20x18.png"
-dest_files=["res://.godot/imported/boar_spritesheet_20x18.png-f6445895e937f33b6c579fd60f04b989.ctex"]
+source_file="res://assets/sprites/player/gruby/player_walk_down.png"
+dest_files=["res://.godot/imported/player_walk_down.png-09f308413ba852706bf393046b25f43e.ctex"]
 
 [params]
 

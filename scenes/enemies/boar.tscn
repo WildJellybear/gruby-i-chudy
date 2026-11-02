@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://mxjek6p3gmwd"]
 
 [ext_resource type="PackedScene" uid="uid://dbvl260oavlk2" path="res://scenes/enemies/enemy.tscn" id="1_b8jve"]
-[ext_resource type="Texture2D" uid="uid://bkko2ane5b50n" path="res://assets/sprites/boar_spritesheet_20x18.png" id="2_mn0bm"]
+[ext_resource type="Texture2D" uid="uid://bkko2ane5b50n" path="res://assets/sprites/enemies/boar_spritesheet_20x18.png" id="2_mn0bm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f7758"]
 radius = 60.0

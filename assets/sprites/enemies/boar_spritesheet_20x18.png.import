@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fuos3jfvpfd1"
-path="res://.godot/imported/player_walk_up.png-41dfd29245c523c777fb322267f653b2.ctex"
+uid="uid://bkko2ane5b50n"
+path="res://.godot/imported/boar_spritesheet_20x18.png-3a4c8df22e7eecc6d4472d67c2760381.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/player_walk_up.png"
-dest_files=["res://.godot/imported/player_walk_up.png-41dfd29245c523c777fb322267f653b2.ctex"]
+source_file="res://assets/sprites/enemies/boar_spritesheet_20x18.png"
+dest_files=["res://.godot/imported/boar_spritesheet_20x18.png-3a4c8df22e7eecc6d4472d67c2760381.ctex"]
 
 [params]
 

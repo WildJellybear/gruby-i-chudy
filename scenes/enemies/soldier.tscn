@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dpo6lwj6y3c4n"]
 
 [ext_resource type="PackedScene" uid="uid://dbvl260oavlk2" path="res://scenes/enemies/enemy.tscn" id="1_q2rr1"]
-[ext_resource type="Texture2D" uid="uid://b4xhbakauqscj" path="res://assets/sprites/player.png" id="2_2oslh"]
+[ext_resource type="Texture2D" uid="uid://b4xhbakauqscj" path="res://assets/sprites/player/player.png" id="2_2oslh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_x21nm"]
 radius = 123.911255
