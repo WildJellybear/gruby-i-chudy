@@ -9,6 +9,14 @@
 atlas = ExtResource("2_n20nc")
 region = Rect2(0, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_n20nc"]
+atlas = ExtResource("3_13kbe")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_13kbe"]
+atlas = ExtResource("4_q16ue")
+region = Rect2(0, 0, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqkch"]
 atlas = ExtResource("2_n20nc")
 region = Rect2(32, 0, 32, 32)
@@ -64,7 +72,23 @@ animations = [{
 "texture": SubResource("AtlasTexture_0ngf5")
 }],
 "loop": 1,
-"name": &"idle",
+"name": &"idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n20nc")
+}],
+"loop": 1,
+"name": &"idle_side",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_13kbe")
+}],
+"loop": 1,
+"name": &"idle_up",
 "speed": 5.0
 }, {
 "frames": [{
@@ -123,3 +147,4 @@ animations = [{
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=1245868877]
 sprite_frames = SubResource("SpriteFrames_bwka5")
+animation = &"idle_down"
