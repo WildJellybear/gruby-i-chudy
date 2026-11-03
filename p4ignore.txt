@@ -1,0 +1,5 @@
+smieci.txt
+.godot/
+*.tmp
+.git/
+.gitignore

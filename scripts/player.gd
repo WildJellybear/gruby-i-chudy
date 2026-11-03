@@ -1,10 +1,13 @@
 extends CharacterBody2D
 
+# const INVENTORY = preload("res://globals/inventory.gd")
+
 const SPEED = 100.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
 	animated_sprite_2d.play("idle")
+	name = "player"
 
 func _physics_process(delta: float) -> void:
 	player_movement(delta)
@@ -25,5 +28,7 @@ func player_movement(delta: float) -> void:
 	else:
 		velocity.x = 0
 		velocity.y = 0
+		
+		
 	
 	move_and_slide()
