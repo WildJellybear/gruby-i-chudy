@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://mxjek6p3gmwd"]
+
+[ext_resource type="PackedScene" uid="uid://dbvl260oavlk2" path="res://scenes/enemies/enemy.tscn" id="1_b8jve"]
+[ext_resource type="Texture2D" uid="uid://bkko2ane5b50n" path="res://assets/sprites/boar_spritesheet_20x18.png" id="2_mn0bm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f7758"]
+radius = 60.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7758"]
+atlas = ExtResource("2_mn0bm")
+region = Rect2(0, 0, 20, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mn0bm"]
+atlas = ExtResource("2_mn0bm")
+region = Rect2(20, 0, 20, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ea8c"]
+atlas = ExtResource("2_mn0bm")
+region = Rect2(40, 0, 20, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6548"]
+atlas = ExtResource("2_mn0bm")
+region = Rect2(60, 0, 20, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_156ks"]
+atlas = ExtResource("2_mn0bm")
+region = Rect2(0, 18, 20, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7ac1"]
+atlas = ExtResource("2_mn0bm")
+region = Rect2(20, 18, 20, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bb5y3"]
+atlas = ExtResource("2_mn0bm")
+region = Rect2(40, 18, 20, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lp13s"]
+atlas = ExtResource("2_mn0bm")
+region = Rect2(60, 18, 20, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4qjkf"]
+atlas = ExtResource("2_mn0bm")
+region = Rect2(80, 18, 20, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_41htl"]
+atlas = ExtResource("2_mn0bm")
+region = Rect2(100, 18, 20, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rlyfy"]
+atlas = ExtResource("2_mn0bm")
+region = Rect2(120, 18, 20, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fc1cp"]
+atlas = ExtResource("2_mn0bm")
+region = Rect2(140, 18, 20, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f7ac1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7758")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mn0bm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ea8c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6548")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"side_attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_156ks")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7ac1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bb5y3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lp13s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4qjkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_41htl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rlyfy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fc1cp")
+}],
+"loop": 1,
+"name": &"side_movement",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tgiih"]
+radius = 2.0
+height = 12.0
+
+[node name="Boar" unique_id=1670174903 instance=ExtResource("1_b8jve")]
+
+[node name="CollisionShape2D" parent="ChaseArea" parent_id_path=PackedInt32Array(734889001) index="0" unique_id=639879579]
+shape = SubResource("CircleShape2D_f7758")
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=2061861656]
+sprite_frames = SubResource("SpriteFrames_f7ac1")
+animation = &"side_movement"
+offset = Vector2(0, -7)
+
+[node name="BodyCollision" parent="." index="2" unique_id=2014239936]
+position = Vector2(0, -1)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_tgiih")

@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://dbvl260oavlk2"]
+
+[ext_resource type="Script" uid="uid://yg6o6bt0wlxf" path="res://scripts/enemy.gd" id="1_7p1mj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_126ht"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_126ht"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"side_attack",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": 1,
+"name": &"side_movement",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="CharacterBody2D" unique_id=1670174903]
+motion_mode = 1
+script = ExtResource("1_7p1mj")
+
+[node name="ChaseArea" type="Area2D" parent="." unique_id=734889001]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ChaseArea" unique_id=639879579]
+shape = SubResource("CircleShape2D_126ht")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2061861656]
+sprite_frames = SubResource("SpriteFrames_126ht")
+animation = &"side_attack"
+
+[node name="BodyCollision" type="CollisionShape2D" parent="." unique_id=2014239936]
+
+[connection signal="body_entered" from="ChaseArea" to="." method="_on_chase_area_body_entered"]
+[connection signal="body_exited" from="ChaseArea" to="." method="_on_chase_area_body_exited"]
