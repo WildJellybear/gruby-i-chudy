@@ -3,3 +3,8 @@
 /android/
 *.translation
 .editorconfig
+
+*.tmp
+export/
+
+.p4config

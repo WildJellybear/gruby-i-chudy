@@ -1,10 +1,12 @@
 extends CharacterBody2D
+class_name Player
 
 const SPEED = 100.0
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 func _ready() -> void:
 	animated_sprite_2d.play("idle")
+	Game.player = self
 
 func _physics_process(delta: float) -> void:
 	player_movement(delta)

@@ -14,6 +14,13 @@ config/name="GrubyIChudy"
 run/main_scene="uid://cyvmbtucfgbeo"
 config/features=PackedStringArray("4.7", "Forward Plus")
 
+[autoload]
+
+Events="*uid://xedgaer3eser"
+Game="*uid://bq6d87vxoge0b"
+Flags="*uid://hwg6vu7gclil"
+DebugSystem="*uid://du8l1104f70fo"
+
 [display]
 
 window/stretch/mode="canvas_items"
