@@ -19,9 +19,9 @@ func _ready() -> void:
 		
 func _set_flag(f: Flag, v: bool):
 	assert(_flags.has(f), "Unknown flag: " + f.resource_path)
-	Events.flag_changed.emit(f,v)
-	f.flag_changed.emit(f,v)
 	_flags.set(f,v)
+	f.flag_changed.emit(f,v)
+	Events.flag_changed.emit(f,v)
 
 func raise(f: Flag):
 	_set_flag(f,true)
