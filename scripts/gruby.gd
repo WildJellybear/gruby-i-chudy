@@ -2,8 +2,9 @@
 extends Player
 
 # Statystyki Grubego
-var hunger: float = 100.0
-var max_hunger: float = 100.0
+const MAX_HUNGER: int = 100
+var hunger: int = MAX_HUNGER
+
 
 
 # Atak Grubego (do zaimplementowania)

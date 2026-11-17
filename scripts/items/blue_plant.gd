@@ -5,6 +5,7 @@ extends Node2D
 
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.name == "player":
+	#if body.name == "player":
+	if body.is_in_group("playable_characters"):
 		if inv.add_item(inv.prep_item(self)):
 			queue_free()

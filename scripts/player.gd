@@ -47,37 +47,37 @@ func player_movement() -> void:
 func update_animation() -> void:
 	var is_moving: bool = velocity != Vector2.ZERO
 
-	# Odbicie bocznego sprite'a (oryginał patrzy w lewo)
 	animated_sprite_2d.flip_h = facing_direction == Vector2.RIGHT
 
-	if is_moving:
-		if facing_direction == Vector2.DOWN:
-			play_animation("walk_down")
-		elif facing_direction == Vector2.UP:
-			play_animation("walk_up")
-		else:
-			play_animation("walk_side")
-	else:
-		if facing_direction == Vector2.DOWN:
-			play_animation("idle_down")
-		elif facing_direction == Vector2.UP:
-			play_animation("idle_up")
-		else:
-			play_animation("idle_side")
+	var action: String = "walk" if is_moving else "idle"
+	var direction_name: String = "side"
+
+	if facing_direction == Vector2.DOWN:
+		direction_name = "down"
+	elif facing_direction == Vector2.UP:
+		direction_name = "up"
+
+	play_animation(action + "_" + direction_name)
+
 
 
 # Odtwarza animację lub zastępcze idle, jeśli jej brakuje
+
 func play_animation(animation_name: StringName) -> void:
 	var frames: SpriteFrames = animated_sprite_2d.sprite_frames
 
+	assert(frames != null, "Brak SpriteFrames dla postaci")
 	if frames == null:
 		return
-
-	if frames.has_animation(animation_name):
-		if frames.get_frame_count(animation_name) > 0:
-			animated_sprite_2d.play(animation_name)
-			return
-
-	if frames.has_animation("idle"):
-		if frames.get_frame_count("idle") > 0:
-			animated_sprite_2d.play("idle")
+	assert(
+		frames.has_animation(animation_name),
+		"Brak animacji: " + str(animation_name)
+	)
+	if not frames.has_animation(animation_name):
+		return
+	assert(
+		frames.get_frame_count(animation_name) > 0,
+		"Animacja nie ma klatek: " + str(animation_name)
+	)
+	if frames.get_frame_count(animation_name) > 0:
+		animated_sprite_2d.play(animation_name)

@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://ddk5yvls678c3" path="res://assets/plains.png" id="1_nnsk1"]
 [ext_resource type="Texture2D" uid="uid://butirh43xryq1" path="res://assets/objects.png" id="2_rwgxs"]
-[ext_resource type="PackedScene" uid="uid://d1hheih2u786h" path="res://scenes/player.tscn" id="3_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://dpo6lwj6y3c4n" path="res://scenes/enemies/soldier.tscn" id="4_qfnet"]
 [ext_resource type="PackedScene" uid="uid://c3e3bpyildsky" path="res://scenes/items/blue_plant.tscn" id="6_i7141"]
 [ext_resource type="PackedScene" uid="uid://mxjek6p3gmwd" path="res://scenes/enemies/boar.tscn" id="6_qfnet"]
@@ -118,11 +117,6 @@ tile_set = SubResource("TileSet_126ht")
 
 [node name="y-sorted" type="Node2D" parent="." unique_id=199846568]
 y_sort_enabled = true
-
-[node name="player" parent="y-sorted" unique_id=1932053902 instance=ExtResource("3_4wyf3")]
-visible = false
-position = Vector2(13, 20)
-collision_layer = 3
 
 [node name="obstacles" type="TileMapLayer" parent="y-sorted" unique_id=1422458068]
 y_sort_enabled = true
