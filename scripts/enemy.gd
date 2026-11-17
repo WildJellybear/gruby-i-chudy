@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+class_name Enemy
 @export var speed: float = 80
 var player_chase: bool = false
 var player: Node2D = null
@@ -31,8 +31,10 @@ func _physics_process(delta: float) -> void:
 func _on_chase_area_body_entered(body: Node2D) -> void:
 	player = body
 	player_chase = true
+	Events.start_player_chase.emit(self)
 
 
 func _on_chase_area_body_exited(body: Node2D) -> void:
 	player = null
 	player_chase = false
+	Events.stop_player_chase.emit(self)

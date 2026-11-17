@@ -1,0 +1,7 @@
+smieci.txt
+
+.godot/
+*.tmp
+export/
+
+.p4config
