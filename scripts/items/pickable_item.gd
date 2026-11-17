@@ -1,8 +1,7 @@
 extends Node2D
 
 @export var item_res : Item
-@onready var inv = GlobalUI.get_node("Control/global-inventory")
-
+@export var inv = Inventory
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.name == "player":

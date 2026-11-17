@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cpyydd3td0i2e"]
 
-[ext_resource type="Script" uid="uid://wbmeu6llid8u" path="res://globals/inventory.gd" id="1_o54et"]
+[ext_resource type="Script" uid="uid://bu1ibyn4pbp6w" path="res://scripts/items/inventory.gd" id="1_o54et"]
 
 [node name="Ui" type="CanvasLayer" unique_id=98374]
 metadata/_edit_use_anchors_ = true
@@ -16,6 +16,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="global-inventory" type="Node2D" parent="Control" unique_id=2126935783]
+[node name="inventory" type="Node2D" parent="Control" unique_id=2126935783]
 position = Vector2(2, 6)
 script = ExtResource("1_o54et")
