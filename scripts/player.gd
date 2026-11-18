@@ -1,7 +1,7 @@
 
 class_name Player
 extends CharacterBody2D
-class_name Player
+# class_name Player
 
 # Prędkość postaci ustawiana osobno w Inspektorze
 @export var speed: float = 100.0
