@@ -1,5 +1,8 @@
 smieci.txt
-.godot/
-*.tmp
 .git/
 .gitignore
+.godot/
+*.tmp
+export/
+.p4config
+

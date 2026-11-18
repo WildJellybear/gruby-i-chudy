@@ -1,6 +1,7 @@
 
 class_name Player
 extends CharacterBody2D
+class_name Player
 
 # Prędkość postaci ustawiana osobno w Inspektorze
 @export var speed: float = 100.0
@@ -15,6 +16,8 @@ var facing_direction: Vector2 = Vector2.DOWN
 func _ready() -> void:
 	add_to_group("playable_characters")
 	update_animation()
+  # animated_sprite_2d.play("idle")
+	# Game.player = self
 
 
 func _physics_process(_delta: float) -> void:

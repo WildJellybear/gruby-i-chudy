@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://hwg6vu7gclil"]
+
+[ext_resource type="Script" uid="uid://clbesv2cyayky" path="res://autoloads/flag/flag_manager.gd" id="1_wera8"]
+[ext_resource type="Script" uid="uid://dtwkavbt68hvq" path="res://resources/Flag.gd" id="2_pbgjl"]
+[ext_resource type="Resource" uid="uid://bqmcv4y1btqrj" path="res://resources/flags/example_flag.tres" id="3_n1p75"]
+
+[node name="Flag" type="Node" unique_id=1287070440]
+script = ExtResource("1_wera8")
+defined_flags = Array[ExtResource("2_pbgjl")]([ExtResource("3_n1p75")])
+metadata/_custom_type_script = "uid://clbesv2cyayky"
