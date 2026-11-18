@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c3e3bpyildsky"]
 
 [ext_resource type="Texture2D" uid="uid://bkpscjvxylj55" path="res://assets/icons/blue_plant.png" id="1_3wm6i"]
-[ext_resource type="Script" uid="uid://bb0rnk5rf0ucp" path="res://scripts/items/blue_plant.gd" id="1_l7sov"]
+[ext_resource type="Script" uid="uid://bb0rnk5rf0ucp" path="res://scripts/items/pickable_item.gd" id="1_l7sov"]
 [ext_resource type="Script" uid="uid://clqccleslmqyu" path="res://scripts/items/item.gd" id="2_fo53l"]
 
 [sub_resource type="Resource" id="Resource_l7sov"]
@@ -12,26 +12,22 @@ inv_icon = ExtResource("1_3wm6i")
 metadata/_custom_type_script = "uid://clqccleslmqyu"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fgxin"]
-height = 26.0
+radius = 5.6568546
+height = 19.798992
 
 [node name="BluePlant" type="Node2D" unique_id=1272857167]
 script = ExtResource("1_l7sov")
 item_res = SubResource("Resource_l7sov")
 
 [node name="BluePlant" type="Sprite2D" parent="." unique_id=400675788]
-position = Vector2(-2.3841858e-07, 1.7881393e-07)
-scale = Vector2(0.75862074, 0.72727275)
+position = Vector2(5.9604645e-08, 8.34465e-07)
+scale = Vector2(0.36, 0.36)
 texture = ExtResource("1_3wm6i")
-
-[node name="Timer" type="Timer" parent="." unique_id=1218989703]
-process_callback = 0
-one_shot = true
-autostart = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1721343202]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=340175256]
+rotation = 0.7853982
 shape = SubResource("CapsuleShape2D_fgxin")
 
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

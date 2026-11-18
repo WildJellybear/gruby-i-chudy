@@ -5,7 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://dpo6lwj6y3c4n" path="res://scenes/enemies/soldier.tscn" id="4_qfnet"]
 [ext_resource type="PackedScene" uid="uid://c3e3bpyildsky" path="res://scenes/items/blue_plant.tscn" id="6_i7141"]
 [ext_resource type="PackedScene" uid="uid://mxjek6p3gmwd" path="res://scenes/enemies/boar.tscn" id="6_qfnet"]
-[ext_resource type="PackedScene" uid="uid://38k1cso7ewx1" path="res://scenes/gruby.tscn" id="7_i7141"]
+[ext_resource type="PackedScene" uid="uid://ci4y5mwv22re6" path="res://scenes/items/green_plant.tscn" id="7_i7141"]
+[ext_resource type="PackedScene" uid="uid://38k1cso7ewx1" path="res://scenes/gruby.tscn" id="8_4mrxx"]
 
 [sub_resource type="GDScript" id="GDScript_e5uuo"]
 script/source = "extends Node2D
@@ -131,18 +132,24 @@ position = Vector2(241, 29)
 position = Vector2(105, 137)
 
 [node name="BluePlant" parent="y-sorted" unique_id=1272857167 instance=ExtResource("6_i7141")]
-position = Vector2(48, 158)
+position = Vector2(52, 161)
 
 [node name="BluePlant2" parent="y-sorted" unique_id=1422492762 instance=ExtResource("6_i7141")]
-position = Vector2(88, 55)
+position = Vector2(92, 49)
 
 [node name="BluePlant3" parent="y-sorted" unique_id=961524111 instance=ExtResource("6_i7141")]
 position = Vector2(284, 121)
 
-[node name="gruby" parent="y-sorted" unique_id=1708005997 instance=ExtResource("7_i7141")]
-position = Vector2(31, 68)
+[node name="gruby" parent="y-sorted" unique_id=1708005997 instance=ExtResource("8_4mrxx")]
+position = Vector2(28, 71)
 
 [node name="Camera2D" type="Camera2D" parent="y-sorted/gruby" unique_id=1507211015]
 position = Vector2(0, -9)
 zoom = Vector2(3, 3)
 position_smoothing_enabled = true
+
+[node name="GreenPlant" parent="y-sorted" unique_id=1300049083 instance=ExtResource("7_i7141")]
+position = Vector2(194, 46)
+
+[node name="GreenPlant2" parent="y-sorted" unique_id=1272409290 instance=ExtResource("7_i7141")]
+position = Vector2(135, 154)

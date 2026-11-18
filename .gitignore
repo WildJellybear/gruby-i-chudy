@@ -4,5 +4,6 @@
 *.translation
 .editorconfig
 smieci.txt
+.godot/
 *.tmp
 

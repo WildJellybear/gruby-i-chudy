@@ -1,4 +1,3 @@
-
 extends Node2D
 
 @onready var item_icon = $item_icon

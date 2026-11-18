@@ -16,6 +16,7 @@ config/features=PackedStringArray("4.7", "Forward Plus")
 
 [autoload]
 
+Inventory="*uid://wbmeu6llid8u"
 GlobalUI="*uid://cpyydd3td0i2e"
 
 [display]
