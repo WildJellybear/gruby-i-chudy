@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://ci4y5mwv22re6"]
+
+[ext_resource type="Script" uid="uid://bb0rnk5rf0ucp" path="res://scripts/items/pickable_item.gd" id="1_kxwii"]
+[ext_resource type="Script" uid="uid://clqccleslmqyu" path="res://scripts/items/item.gd" id="2_fvjdc"]
+[ext_resource type="Texture2D" uid="uid://cwhjxrkx4vf1p" path="res://assets/icons/green_plant.png" id="3_c4e3w"]
+
+[sub_resource type="Resource" id="Resource_c4e3w"]
+script = ExtResource("2_fvjdc")
+name = "green_plant"
+type = "Herb"
+inv_icon = ExtResource("3_c4e3w")
+metadata/_custom_type_script = "uid://clqccleslmqyu"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c4e3w"]
+radius = 6.363961
+height = 18.384777
+
+[node name="GreenPlant" type="Node2D" unique_id=1300049083]
+script = ExtResource("1_kxwii")
+item_res = SubResource("Resource_c4e3w")
+
+[node name="GreenPlant" type="Sprite2D" parent="." unique_id=1925182090]
+position = Vector2(2.3841858e-07, 0)
+scale = Vector2(0.29090908, 0.3272727)
+texture = ExtResource("3_c4e3w")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1090939119]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=821913082]
+rotation = 0.7853982
+shape = SubResource("CapsuleShape2D_c4e3w")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

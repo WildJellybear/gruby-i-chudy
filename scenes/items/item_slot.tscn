@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://cgji7b11k5r2i"]
+
+[ext_resource type="Script" uid="uid://dpfglsqqux04h" path="res://scripts/items/item_slot.gd" id="1_mdn4g"]
+[ext_resource type="Texture2D" uid="uid://wwj85l21g87m" path="res://assets/icons/empty.png" id="2_mdn4g"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mdn4g"]
+font_color = Color(0.99727064, 0.9630658, 0.96151346, 1)
+outline_size = 3
+outline_color = Color(1.9741129e-09, 0.0028774203, 0.0028840858, 1)
+shadow_size = 3
+shadow_color = Color(0, 1, 0, 0)
+
+[node name="item_slot" type="Node2D" unique_id=49270828]
+script = ExtResource("1_mdn4g")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1412510068]
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+color = Color(0.49406385, 0.38583723, 0.2558269, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="item_icon" type="Sprite2D" parent="." unique_id=71514335]
+position = Vector2(1.4305115e-06, 3.499999)
+scale = Vector2(0.5357143, 0.5535714)
+texture = ExtResource("2_mdn4g")
+
+[node name="Button" type="Button" parent="." unique_id=941371927]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+
+[node name="item_count_label" type="Label" parent="." unique_id=388920218]
+offset_right = 20.0
+offset_bottom = 25.0
+text = "0"
+label_settings = SubResource("LabelSettings_mdn4g")
+horizontal_alignment = 2

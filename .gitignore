@@ -3,8 +3,8 @@
 /android/
 *.translation
 .editorconfig
-
-*.tmp
+smieci.txt
+.godot/
 export/
-
 .p4config
+
