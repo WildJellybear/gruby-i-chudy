@@ -27,10 +27,10 @@ func _physics_process(_delta: float) -> void:
 # Obsługa ruchu i zapamiętywanie kierunku
 func player_movement() -> void:
 	var direction: Vector2 = Input.get_vector(
-		"ui_left",
-		"ui_right",
-		"ui_up",
-		"ui_down"
+		"move_left",
+		"move_right",
+		"move_up",
+		"move_down"
 	)
 
 	velocity = direction * speed
