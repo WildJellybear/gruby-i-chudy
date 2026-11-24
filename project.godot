@@ -32,6 +32,11 @@ window/stretch/aspect="expand"
 
 project/assembly_name="GrubyIChudy"
 
+[global_group]
+
+player=""
+dialogue_box=""
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

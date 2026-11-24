@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://dm2gv5n14vcts"]
+
+[ext_resource type="PackedScene" uid="uid://yygxs5uuqto1" path="res://scenes/npcs/npc.tscn" id="1_s8ei3"]
+[ext_resource type="Texture2D" uid="uid://b4xhbakauqscj" path="res://assets/sprites/player.png" id="2_l1ka8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hs3i1"]
+atlas = ExtResource("2_l1ka8")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tvcxo"]
+atlas = ExtResource("2_l1ka8")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jheng"]
+atlas = ExtResource("2_l1ka8")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_viajw"]
+atlas = ExtResource("2_l1ka8")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_23q3x"]
+atlas = ExtResource("2_l1ka8")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tk6i0"]
+atlas = ExtResource("2_l1ka8")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l1ka8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hs3i1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tvcxo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jheng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_viajw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_23q3x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tk6i0")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Trader" unique_id=230153707 instance=ExtResource("1_s8ei3")]
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=635144173]
+sprite_frames = SubResource("SpriteFrames_l1ka8")
+animation = &"default"
+frame = 5
+frame_progress = 0.8868039
+
+[node name="CollisionShape2D" parent="InteractionArea" parent_id_path=PackedInt32Array(297678810) index="0" unique_id=503376209]
+position = Vector2(0, 9)

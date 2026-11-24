@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://mxjek6p3gmwd" path="res://scenes/enemies/boar.tscn" id="6_qfnet"]
 [ext_resource type="PackedScene" uid="uid://ci4y5mwv22re6" path="res://scenes/items/green_plant.tscn" id="7_i7141"]
 [ext_resource type="PackedScene" uid="uid://38k1cso7ewx1" path="res://scenes/gruby.tscn" id="8_4mrxx"]
+[ext_resource type="PackedScene" uid="uid://dm2gv5n14vcts" path="res://scenes/npcs/trader.tscn" id="8_7r4gi"]
+[ext_resource type="PackedScene" uid="uid://4a6j3eymjjpp" path="res://scenes/dialogue_box.tscn" id="9_7r4gi"]
 
 [sub_resource type="GDScript" id="GDScript_e5uuo"]
 script/source = "extends Node2D
@@ -153,3 +155,7 @@ position = Vector2(194, 46)
 
 [node name="GreenPlant2" parent="y-sorted" unique_id=1272409290 instance=ExtResource("7_i7141")]
 position = Vector2(135, 154)
+
+[node name="Trader" parent="y-sorted" unique_id=230153707 instance=ExtResource("8_7r4gi")]
+
+[node name="DialogueBox" parent="y-sorted" unique_id=40921944 instance=ExtResource("9_7r4gi")]
