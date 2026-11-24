@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://yygxs5uuqto1"]
+
+[ext_resource type="Script" uid="uid://b73bapads4xet" path="res://scripts/npc.gd" id="1_ivh6b"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4kxuq"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f6fiw"]
+radius = 60.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=230153707]
+script = ExtResource("1_ivh6b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=635144173]
+sprite_frames = SubResource("SpriteFrames_4kxuq")
+animation = &"idle"
+
+[node name="BodyCollision" type="CollisionShape2D" parent="." unique_id=2072683043]
+
+[node name="InteractionArea" type="Area2D" parent="." unique_id=297678810]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=503376209]
+shape = SubResource("CircleShape2D_f6fiw")
+
+[connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]
