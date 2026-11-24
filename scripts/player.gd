@@ -26,16 +26,12 @@ func _physics_process(_delta: float) -> void:
 
 # Obsługa ruchu i zapamiętywanie kierunku
 func player_movement() -> void:
-	var direction: Vector2 = Vector2.ZERO
-
-	if Input.is_action_pressed("ui_right"):
-		direction = Vector2.RIGHT
-	elif Input.is_action_pressed("ui_left"):
-		direction = Vector2.LEFT
-	elif Input.is_action_pressed("ui_down"):
-		direction = Vector2.DOWN
-	elif Input.is_action_pressed("ui_up"):
-		direction = Vector2.UP
+	var direction: Vector2 = Input.get_vector(
+		"move_left",
+		"move_right",
+		"move_up",
+		"move_down"
+	)
 
 	velocity = direction * speed
 
@@ -50,14 +46,16 @@ func player_movement() -> void:
 func update_animation() -> void:
 	var is_moving: bool = velocity != Vector2.ZERO
 
-	animated_sprite_2d.flip_h = facing_direction == Vector2.RIGHT
+	animated_sprite_2d.flip_h = facing_direction.x > 0
 
 	var action: String = "walk" if is_moving else "idle"
 	var direction_name: String = "side"
 
-	if facing_direction == Vector2.DOWN:
+	if facing_direction.x != 0:
+		direction_name = "side"
+	elif facing_direction.y > 0:
 		direction_name = "down"
-	elif facing_direction == Vector2.UP:
+	elif facing_direction.y < 0:
 		direction_name = "up"
 
 	play_animation(action + "_" + direction_name)
