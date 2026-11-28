@@ -113,6 +113,7 @@ radius = 2.0
 height = 12.0
 
 [node name="Boar" unique_id=1670174903 instance=ExtResource("1_b8jve")]
+behavior = 1
 
 [node name="CollisionShape2D" parent="ChaseArea" parent_id_path=PackedInt32Array(734889001) index="0" unique_id=639879579]
 shape = SubResource("CircleShape2D_f7758")
