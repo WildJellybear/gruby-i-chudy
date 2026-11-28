@@ -39,5 +39,8 @@ animation = &"side_attack"
 
 [node name="BodyCollision" type="CollisionShape2D" parent="." unique_id=2014239936]
 
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="." unique_id=181968624]
+path_desired_distance = 2.0
+
 [connection signal="body_entered" from="ChaseArea" to="." method="_on_chase_area_body_entered"]
 [connection signal="body_exited" from="ChaseArea" to="." method="_on_chase_area_body_exited"]

@@ -101,6 +101,16 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_rwgxs")
 sources/1 = SubResource("TileSetAtlasSource_4wyf3")
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_xrivr"]
+vertices = PackedVector2Array(217.72656, 87.25, 87.38281, 88.82031, 91.46875, 73.78906, 188.00781, 72, 212.97656, 72, 241.52344, 79.00781, 195.3125, 143.92188, 206.84375, 154.25, 202.70313, 176.6875, 177.50781, 175.00781, 142.72656, 169.15625, 138.70313, 160.6875, 328.0625, -8.8125, 329.9375, 236, 296.52344, 127.21094, 283.46875, 89.78906, 279.3828, 104.82031, 113.50781, 159.00781, 89.72656, 167.25, 56.523438, 159.21094, 62.84375, 90.25, 220.35156, 57.007813, 276.25, 79.10156, 248.63281, 79.10156, 153.72656, 183.25, 133.77344, 181.78906, 289.53906, 149.59375, 197.77344, 197.78906, 206.72656, 185.15625, 266.96094, 148.20313, 178.21875, 59.007813, 84.25, 63.101563, 266.96094, 129.25, 254.82813, 106.25, 235.46875, 137.78906, 231.38281, 152.82031, 250.32031, 102.203125, 228.25, 127.10156, 235.20313, 102.78125, 248.5, 79.46875, 49.539063, 181.59375, 212.46875, 45.0625, -45.0625, -0.171875, 187.6875, 43.59375, 56.601563, 63.101563, -46.9375, 236, 171.20313, 198.77344, 107.203125, 182.77344, 26.960938, 180.20313, 26.960938, 161.25, 200.60156, 127.10156, 51.3125, 79.921875)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5), PackedInt32Array(6, 7, 8, 9, 10, 11), PackedInt32Array(12, 13, 14), PackedInt32Array(15, 12, 14, 16), PackedInt32Array(1, 17, 18, 19, 20), PackedInt32Array(21, 12, 22, 23, 4), PackedInt32Array(10, 9, 24, 25), PackedInt32Array(26, 14, 13), PackedInt32Array(26, 13, 27, 28, 29), PackedInt32Array(30, 3, 2, 31), PackedInt32Array(16, 14, 32, 33), PackedInt32Array(12, 15, 22), PackedInt32Array(34, 33, 32, 29, 35), PackedInt32Array(36, 33, 34, 37, 38), PackedInt32Array(4, 23, 39, 5), PackedInt32Array(29, 28, 8, 35), PackedInt32Array(7, 35, 8), PackedInt32Array(40, 19, 18), PackedInt32Array(12, 21, 41), PackedInt32Array(42, 12, 41, 43), PackedInt32Array(44, 42, 43, 30, 31), PackedInt32Array(27, 13, 45, 46), PackedInt32Array(25, 24, 46, 45, 47), PackedInt32Array(18, 47, 45, 40), PackedInt32Array(48, 40, 45), PackedInt32Array(48, 45, 42, 49), PackedInt32Array(0, 38, 37, 50, 1), PackedInt32Array(1, 50, 6, 11, 17), PackedInt32Array(20, 19, 49, 42, 51), PackedInt32Array(44, 51, 42)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-53, -8, -55, 244, 338, 244, 336, -17)])
+parsed_geometry_type = 1
+parsed_collision_mask = 1
+source_geometry_mode = 2
+source_geometry_group_name = &"navigation_geometry"
+agent_radius = 12.0
+
 [node name="world" type="Node2D" unique_id=2060937464]
 script = SubResource("GDScript_e5uuo")
 
@@ -108,7 +118,7 @@ script = SubResource("GDScript_e5uuo")
 tile_set = SubResource("TileSet_126ht")
 format = 2
 
-[node name="cliff" type="TileMapLayer" parent="TileMap" unique_id=1374941773]
+[node name="cliff" type="TileMapLayer" parent="TileMap" unique_id=1374941773 groups=["navigation_geometry"]]
 use_parent_material = true
 tile_map_data = PackedByteArray("AAASAAIAAAACAAYAAAARAAIAAAACAAYAAAAQAAIAAAACAAYAAAAPAAIAAAACAAYAAAAOAAIAAAABAAYAAAAOAAAAAAABAAUAAAAOAAEAAAABAAUAAAASAAEAAAACAAUAAAARAAEAAAACAAUAAAAQAAEAAAACAAUAAAAPAAEAAAACAAUAAAAPAAAAAAACAAUAAAAQAAAAAAACAAUAAAARAAAAAAACAAUAAAASAAAAAAACAAUAAAAPAAoAAAAAAAUAAAAPAAkAAAAAAAUAAAAPAAsAAAAAAAYAAAAPAAgAAAAAAAQAAAA=")
 tile_set = SubResource("TileSet_126ht")
@@ -121,7 +131,7 @@ tile_set = SubResource("TileSet_126ht")
 [node name="y-sorted" type="Node2D" parent="." unique_id=199846568]
 y_sort_enabled = true
 
-[node name="obstacles" type="TileMapLayer" parent="y-sorted" unique_id=1422458068]
+[node name="obstacles" type="TileMapLayer" parent="y-sorted" unique_id=1422458068 groups=["navigation_geometry"]]
 y_sort_enabled = true
 use_parent_material = true
 tile_map_data = PackedByteArray("AAAMAAMAAQAKAAcAAAALAAsAAQAGAAcAAAARAAgAAQAIAAYAAAAPAAUAAQAGAAcAAAAEAAQAAQAAAAUAAAACAAoAAQAIAAYAAAAHAAoAAQAGAAcAAAANAAgAAQAAAAUAAAAQAAUAAQAAAAUAAAA=")
@@ -159,3 +169,6 @@ position = Vector2(135, 154)
 [node name="Trader" parent="y-sorted" unique_id=230153707 instance=ExtResource("8_7r4gi")]
 
 [node name="DialogueBox" parent="y-sorted" unique_id=40921944 instance=ExtResource("9_7r4gi")]
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="." unique_id=1513418727]
+navigation_polygon = SubResource("NavigationPolygon_xrivr")

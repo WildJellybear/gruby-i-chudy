@@ -66,11 +66,19 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qkiq7"]
+size = Vector2(13, 4)
+
 [node name="Soldier" unique_id=806931362 instance=ExtResource("1_q2rr1")]
 
 [node name="CollisionShape2D" parent="ChaseArea" parent_id_path=PackedInt32Array(734889001) index="0" unique_id=639879579]
 shape = SubResource("CircleShape2D_x21nm")
 
 [node name="AnimatedSprite2D" parent="." index="1" unique_id=2061861656]
+position = Vector2(0, -17.025)
 sprite_frames = SubResource("SpriteFrames_se1ou")
 animation = &"idle"
+
+[node name="BodyCollision" parent="." index="2" unique_id=2014239936]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_qkiq7")
